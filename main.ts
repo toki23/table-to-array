@@ -18,11 +18,11 @@ function createItemArray(items: Element | null): Array<string> {
 }
 export function toArray(text: string): Array<Array<string>> {
   const doc = toDom(text)
-  const table = doc?.getElementById("table");
+  const table = doc?.getElementsByTagName("table");
   if (!table) {
     throw new Error("Table not found in HTML");
   }
-  const tbody = table.lastElementChild;
+  const tbody = table[0]?.getElementsByTagName("tbody")[0];
   const rowLength = tbody?.childElementCount;
   const resultArray = [];
   for (let i = 0; i < (rowLength ?? 0); i++) {
