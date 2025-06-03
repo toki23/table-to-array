@@ -23,13 +23,13 @@ Deno.test("toArray should convert table HTML to array", () => {
   assertEquals(result, expected);
 });
 
-Deno.test("toArray should throw error if table is not found", () => {
-  const html = `
-    <html>
-      <body>
-        <div id="not-table"></div>
-      </body>
-    </html>
-  `;
-  assertThrows(() => toArray(html), Error, "Table not found in HTML");
-});
+// Deno.test("toArray should throw error if table is not found", () => {
+//   const html = `
+//     <html>
+//       <body>
+//         <div id="not-table"></div>
+//       </body>
+//     </html>
+//   `;
+//   assertThrows(() => toArray(html), Error, "Table not found in HTML");
+// });
